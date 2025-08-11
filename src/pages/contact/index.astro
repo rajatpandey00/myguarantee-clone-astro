@@ -1,0 +1,199 @@
+---
+const pageTitle = 'Contact';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{pageTitle} | MyGuarantee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body class="bg-gray-50">
+    <main class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <section class="bg-bg-white rounded-3xl shadow-card p-6 sm:p-7 md:p-8">
+        <h1 class="text-3xl font-bold text-center">Contact Us</h1>
+        <p class="text-text-gray mt-2 text-center">
+          Tell us a little about your request and we’ll get back to you.
+        </p>
+
+        <form id="contactForm" class="mt-6 space-y-5" action="/api/contact" method="POST" novalidate>
+          <!-- Honeypot (spam prevention) -->
+          <input type="text" name="company_website" tabindex="-1" autocomplete="off" class="hidden" />
+
+          <div>
+            <label for="name" class="block text-sm font-medium">Full name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              minlength="2"
+              class="mt-2 w-full rounded-2xl border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              placeholder="Jane Doe"
+            />
+            <p class="mt-1 text-sm text-red-600 hidden" data-error-for="name"></p>
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              class="mt-2 w-full rounded-2xl border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              placeholder="jane@example.com"
+            />
+            <p class="mt-1 text-sm text-red-600 hidden" data-error-for="email"></p>
+          </div>
+
+          <div>
+            <label for="subject" class="block text-sm font-medium">Subject</label>
+            <input
+              id="subject"
+              name="subject"
+              type="text"
+              required
+              class="mt-2 w-full rounded-2xl border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              placeholder="I’d like to discuss…"
+            />
+            <p class="mt-1 text-sm text-red-600 hidden" data-error-for="subject"></p>
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              minlength="10"
+              rows="5"
+              class="mt-2 w-full rounded-2xl border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              placeholder="Write your message here…"
+            ></textarea>
+            <p class="mt-1 text-sm text-red-600 hidden" data-error-for="message"></p>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <label class="inline-flex items-center gap-3">
+              <input type="checkbox" name="consent" required class="h-4 w-4 rounded border-gray-300" />
+              <span class="text-sm text-gray-700">I agree to be contacted about my enquiry.</span>
+            </label>
+            <button
+              id="submitBtn"
+              type="submit"
+              class="rounded-2xl px-5 py-3 font-semibold bg-emerald-500 text-white shadow hover:shadow-md transition disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              Send message
+            </button>
+          </div>
+
+          <!-- Live region for status -->
+          <div class="mt-4">
+            <p id="formStatus" class="text-sm" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+    </main>
+
+	<script is:inline>
+		// Works on first load and Astro's client-side navigations
+		const ready = (fn) => {
+		  if (document.readyState !== 'loading') fn();
+		  else document.addEventListener('DOMContentLoaded', fn);
+		  // If you use View Transitions / client routing, this also helps:
+		  document.addEventListener('astro:page-load', fn, { once: true });
+		};
+	  
+		ready(() => {
+		  const form = document.getElementById('contactForm');
+		  const submitBtn = document.getElementById('submitBtn');
+		  const statusEl = document.getElementById('formStatus');
+	  
+		  if (!form || !submitBtn || !statusEl) {
+			console.warn('Contact form elements not found. Check IDs and placement.');
+			return;
+		  }
+	  
+		  function showError(input, msg) {
+			const p = form.querySelector('[data-error-for="' + input.name + '"]');
+			if (p) {
+			  p.textContent = msg || '';
+			  p.classList.remove('hidden');
+			}
+			input.setAttribute('aria-invalid', 'true');
+		  }
+	  
+		  function clearErrors() {
+			form.querySelectorAll('[data-error-for]').forEach((p) => {
+			  p.textContent = '';
+			  p.classList.add('hidden');
+			});
+			form.querySelectorAll('[aria-invalid="true"]').forEach((el) =>
+			  el.removeAttribute('aria-invalid')
+			);
+		  }
+	  
+		  form.addEventListener('submit', async (e) => {
+			e.preventDefault();
+			clearErrors();
+	  
+			const data = new FormData(form);
+			if (data.get('company_website')) {
+			  statusEl.textContent = 'Unable to send at this time.';
+			  return;
+			}
+	  
+			const requiredFields = ['name', 'email', 'subject', 'message', 'consent'];
+			let valid = true;
+	  
+			for (const field of requiredFields) {
+			  const input = form.elements[field];
+			  if (!input) continue;
+	  
+			  if (input.type === 'checkbox') {
+				if (!input.checked) {
+				  showError(input, 'Please provide consent to be contacted.');
+				  valid = false;
+				}
+			  } else if (!input.value || !input.checkValidity()) {
+				showError(input, 'Please fill out this field correctly.');
+				valid = false;
+			  }
+			}
+	  
+			if (!valid) {
+			  statusEl.textContent = 'Please fix the highlighted fields.';
+			  statusEl.className = 'text-sm text-red-600';
+			  return;
+			}
+	  
+			submitBtn.disabled = true;
+			statusEl.textContent = 'Sending…';
+			statusEl.className = 'text-sm text-gray-600';
+	  
+			try {
+			  const res = await fetch(form.action, {
+				method: 'POST',
+				headers: { Accept: 'application/json' },
+				body: new FormData(form),
+			  });
+	  
+			  const json = await res.json().catch(() => ({}));
+			  if (!res.ok) throw new Error(json?.message || 'Failed to send');
+	  
+			  statusEl.textContent = 'Thanks! Your message has been sent.';
+			  statusEl.className = 'text-sm text-emerald-600';
+			  form.reset();
+			} catch (err) {
+			  statusEl.textContent = 'Something went wrong. Please try again later.';
+			  statusEl.className = 'text-sm text-red-600';
+			} finally {
+			  submitBtn.disabled = false;
+			}
+		  });
+		});
+	  </script>
+	  
+  </body>
+</html>
