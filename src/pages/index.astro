@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
+import OnboardingSection from "../components/Onboarding.astro";
+import FeaturesBenefits from "../components/FeaturesBenefits.astro";
 ---
 
 <Layout title="MyGuarantee - Fee free digital bank guarantees">
@@ -61,99 +63,7 @@ import Footer from "../components/Footer.astro";
   </section>
 
   <!-- Features and Benefits -->
-  <section class="features text-center py-12 sm:py-16 md:py-24 bg-bg-light">
-    <div class="container">
-      <h2 class="text-3xl sm:text-3xl md:text-4xl font-bold">
-        Features and Benefits
-      </h2>
-      <p
-        class="text-text-gray text-base sm:text-base md:text-lg mt-3 sm:mt-3 md:mt-4 max-w-3xl mx-auto"
-      >
-        MyGuarantee offers secure, cost-effective, and sustainable digital bank
-        guarantees, through an efficient and responsive application process.
-      </p>
-      <p
-        class="text-text-gray text-base sm:text-base md:text-lg mt-2 max-w-3xl mx-auto"
-      >
-        Delivering speed, transparency, correctness, and security.
-      </p>
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 lg:gap-8 mt-8 sm:mt-10 md:mt-12"
-      >
-        <div class="p-6 sm:p-7 md:p-8 bg-bg-white rounded-3xl shadow-card">
-          <svg
-            class="w-10 sm:w-11 md:w-12 h-10 sm:h-11 md:h-12"
-            viewBox="0 0 24 24"
-            fill="#10B981"
-            ><path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3z"></path></svg
-          >
-          <h3
-            class="text-xl sm:text-xl md:text-2xl font-bold mt-3 sm:mt-3 md:mt-4"
-          >
-            Fast
-          </h3>
-          <p class="text-text-gray mt-2 text-base sm:text-base md:text-lg">
-            Digital requests and confirmation with beneficiaries
-          </p>
-        </div>
-        <div class="p-6 sm:p-7 md:p-8 bg-bg-white rounded-3xl shadow-card">
-          <svg
-            class="w-10 sm:w-11 md:w-12 h-10 sm:h-11 md:h-12"
-            viewBox="0 0 24 24"
-            fill="#10B981"
-            ><path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4 8-8z"
-            ></path></svg
-          >
-          <h3
-            class="text-xl sm:text-xl md:text-2xl font-bold mt-3 sm:mt-3 md:mt-4"
-          >
-            Cash Secured
-          </h3>
-          <p class="text-text-gray mt-2 text-base sm:text-base md:text-lg">
-            Cash Secured with Perpetual and AMP Bank
-          </p>
-        </div>
-        <div class="p-6 sm:p-7 md:p-8 bg-bg-white rounded-3xl shadow-card">
-          <svg
-            class="w-10 sm:w-11 md:w-12 h-10 sm:h-11 md:h-12"
-            viewBox="0 0 24 24"
-            fill="#10B981"
-            ><path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7z"
-            ></path></svg
-          >
-          <h3
-            class="text-xl sm:text-xl md:text-2xl font-bold mt-3 sm:mt-3 md:mt-4"
-          >
-            No Fees
-          </h3>
-          <p class="text-text-gray mt-2 text-base sm:text-base md:text-lg">
-            No application fee and no recurring fees
-          </p>
-        </div>
-        <div class="p-6 sm:p-7 md:p-8 bg-bg-white rounded-3xl shadow-card">
-          <svg
-            class="w-10 sm:w-11 md:w-12 h-10 sm:h-11 md:h-12"
-            viewBox="0 0 24 24"
-            fill="#10B981"
-            ><path
-              d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1 .9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-4-4h-4v-2h2c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2c0 1.1 .9 2 2 2h2v2h4v2zM9 9v2h4V9h-4z"
-            ></path></svg
-          >
-          <h3
-            class="text-xl sm:text-xl md:text-2xl font-bold mt-3 sm:mt-3 md:mt-4"
-          >
-            Standard Terms
-          </h3>
-          <p class="text-text-gray mt-2 text-base sm:text-base md:text-lg">
-            Minimum bank guarantee value of $1,000 with standard terms
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <FeaturesBenefits />
   <!-- Partners -->
   <section class="partners text-center py-12 sm:py-16 md:py-16">
     <div class="container">
@@ -183,22 +93,7 @@ import Footer from "../components/Footer.astro";
   </section>
 
   <!-- It's Free -->
-  <section class="free-section text-center py-12 sm:py-16 md:py-24 bg-bg-white">
-    <div class="container">
-      <div
-        class="bg-teal text-bg-white p-8 sm:p-10 md:p-12 rounded-3xl shadow-card max-w-4xl mx-auto"
-      >
-        <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold">It's Free</h2>
-        <div
-          class="flex flex-col sm:flex-row justify-around mt-6 sm:mt-8 text-xl sm:text-xl md:text-2xl font-medium space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-8"
-        >
-          <span>NO onboarding fees</span>
-          <span>NO application fees</span>
-          <span>NO recurring fees</span>
-        </div>
-      </div>
-    </div>
-  </section>
+  <OnboardingSection />
 
   <!-- Eligibility Criteria -->
   <section class="eligibility text-center py-12 sm:py-16 md:py-24">
