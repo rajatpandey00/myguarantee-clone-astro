@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-dm-sans text-text-black bg-bg-white;
+  }
+}
+
+@layer components {
+  .button {
+    @apply bg-lime-green text-black px-6 py-3 rounded-3xl font-dm-sans text-sm shadow-md hover:bg-teal/90 transition-colors duration-200;
+  }
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
