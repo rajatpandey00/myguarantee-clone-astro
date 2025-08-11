@@ -1,38 +1,41 @@
 ---
-import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="MyGuarantee - Fee free digital bank guarantees">
   <!-- Hero Section -->
   <section
-    class="hero text-center py-24 bg-hero-gradient relative overflow-hidden"
+    class="hero text-center py-12 sm:py-16 md:py-24 bg-hero-gradient relative overflow-hidden"
   >
     <div class="container">
-      <h1 class="text-6xl font-bold leading-tight">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
         Fee free digital bank guarantees
       </h1>
-      <p class="text-text-gray text-xl mt-6 max-w-2xl mx-auto">
+      <p
+        class="text-text-gray text-base sm:text-lg md:text-xl mt-4 sm:mt-5 md:mt-6 max-w-2xl mx-auto"
+      >
         Bank guarantees issued the same day without the pain of paper.
       </p>
-      <p class="text-text-gray text-xl mt-4 max-w-2xl mx-auto">
+      <p
+        class="text-text-gray text-base sm:text-lg md:text-xl mt-2 sm:mt-3 md:mt-4 max-w-2xl mx-auto"
+      >
         MyGuarantee is a distributor of Digital Bank Guarantees on behalf of AMP
         Bank.
       </p>
-      <a href="#" class="button inline-block mt-8">Apply Now</a>
+      <a href="#" class="button inline-block mt-6 sm:mt-7 md:mt-8">Apply Now</a>
     </div>
-    <div class="relative mt-32">
+    <div class="relative mt-8 sm:mt-12 md:mt-16">
       <img
         src="/public/girl-with-laptop.png"
         alt="Woman using laptop"
         class="max-w-full h-auto mx-auto rounded-3xl shadow-xl"
       />
       <div
-        class="absolute top-10 left-20 bg-bg-white p-6 rounded-3xl shadow-card opacity-90"
+        class="absolute top-5 sm:top-8 md:top-10 left-5 sm:left-10 md:left-20 bg-bg-white p-4 sm:p-5 md:p-6 rounded-3xl shadow-card opacity-90"
       >
         <svg
-          width="48"
-          height="48"
+          class="w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#10B981"
@@ -43,11 +46,10 @@ import Layout from "../layouts/Layout.astro";
         >
       </div>
       <div
-        class="absolute top-32 right-20 bg-bg-white p-6 rounded-3xl shadow-card opacity-90"
+        class="absolute top-16 sm:top-24 md:top-32 right-5 sm:right-10 md:right-20 bg-bg-white p-4 sm:p-5 md:p-6 rounded-3xl shadow-card opacity-90"
       >
         <svg
-          width="48"
-          height="48"
+          class="w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#10B981"
@@ -59,56 +61,92 @@ import Layout from "../layouts/Layout.astro";
   </section>
 
   <!-- Features and Benefits -->
-  <section class="features text-center py-24 bg-bg-light">
+  <section class="features text-center py-12 sm:py-16 md:py-24 bg-bg-light">
     <div class="container">
-      <h2 class="text-4xl font-bold">Features and Benefits</h2>
-      <p class="text-text-gray text-lg mt-4 max-w-3xl mx-auto">
+      <h2 class="text-3xl sm:text-3xl md:text-4xl font-bold">
+        Features and Benefits
+      </h2>
+      <p
+        class="text-text-gray text-base sm:text-base md:text-lg mt-3 sm:mt-3 md:mt-4 max-w-3xl mx-auto"
+      >
         MyGuarantee offers secure, cost-effective, and sustainable digital bank
         guarantees, through an efficient and responsive application process.
       </p>
-      <p class="text-text-gray text-lg mt-2 max-w-3xl mx-auto">
+      <p
+        class="text-text-gray text-base sm:text-base md:text-lg mt-2 max-w-3xl mx-auto"
+      >
         Delivering speed, transparency, correctness, and security.
       </p>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-        <div class="p-8 bg-bg-white rounded-3xl shadow-card">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="#10B981"
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 lg:gap-8 mt-8 sm:mt-10 md:mt-12"
+      >
+        <div class="p-6 sm:p-7 md:p-8 bg-bg-white rounded-3xl shadow-card">
+          <svg
+            class="w-10 sm:w-11 md:w-12 h-10 sm:h-11 md:h-12"
+            viewBox="0 0 24 24"
+            fill="#10B981"
             ><path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3z"></path></svg
           >
-          <h3 class="text-2xl font-bold mt-4">Fast</h3>
-          <p class="text-text-gray mt-2">
+          <h3
+            class="text-xl sm:text-xl md:text-2xl font-bold mt-3 sm:mt-3 md:mt-4"
+          >
+            Fast
+          </h3>
+          <p class="text-text-gray mt-2 text-base sm:text-base md:text-lg">
             Digital requests and confirmation with beneficiaries
           </p>
         </div>
-        <div class="p-8 bg-bg-white rounded-3xl shadow-card">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="#10B981"
+        <div class="p-6 sm:p-7 md:p-8 bg-bg-white rounded-3xl shadow-card">
+          <svg
+            class="w-10 sm:w-11 md:w-12 h-10 sm:h-11 md:h-12"
+            viewBox="0 0 24 24"
+            fill="#10B981"
             ><path
               d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4 8-8z"
             ></path></svg
           >
-          <h3 class="text-2xl font-bold mt-4">Cash Secured</h3>
-          <p class="text-text-gray mt-2">
+          <h3
+            class="text-xl sm:text-xl md:text-2xl font-bold mt-3 sm:mt-3 md:mt-4"
+          >
+            Cash Secured
+          </h3>
+          <p class="text-text-gray mt-2 text-base sm:text-base md:text-lg">
             Cash Secured with Perpetual and AMP Bank
           </p>
         </div>
-        <div class="p-8 bg-bg-white rounded-3xl shadow-card">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="#10B981"
+        <div class="p-6 sm:p-7 md:p-8 bg-bg-white rounded-3xl shadow-card">
+          <svg
+            class="w-10 sm:w-11 md:w-12 h-10 sm:h-11 md:h-12"
+            viewBox="0 0 24 24"
+            fill="#10B981"
             ><path
               d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7z"
             ></path></svg
           >
-          <h3 class="text-2xl font-bold mt-4">No Fees</h3>
-          <p class="text-text-gray mt-2">
+          <h3
+            class="text-xl sm:text-xl md:text-2xl font-bold mt-3 sm:mt-3 md:mt-4"
+          >
+            No Fees
+          </h3>
+          <p class="text-text-gray mt-2 text-base sm:text-base md:text-lg">
             No application fee and no recurring fees
           </p>
         </div>
-        <div class="p-8 bg-bg-white rounded-3xl shadow-card">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="#10B981"
+        <div class="p-6 sm:p-7 md:p-8 bg-bg-white rounded-3xl shadow-card">
+          <svg
+            class="w-10 sm:w-11 md:w-12 h-10 sm:h-11 md:h-12"
+            viewBox="0 0 24 24"
+            fill="#10B981"
             ><path
               d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1 .9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-4-4h-4v-2h2c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2c0 1.1 .9 2 2 2h2v2h4v2zM9 9v2h4V9h-4z"
             ></path></svg
           >
-          <h3 class="text-2xl font-bold mt-4">Standard Terms</h3>
-          <p class="text-text-gray mt-2">
+          <h3
+            class="text-xl sm:text-xl md:text-2xl font-bold mt-3 sm:mt-3 md:mt-4"
+          >
+            Standard Terms
+          </h3>
+          <p class="text-text-gray mt-2 text-base sm:text-base md:text-lg">
             Minimum bank guarantee value of $1,000 with standard terms
           </p>
         </div>
@@ -117,40 +155,42 @@ import Layout from "../layouts/Layout.astro";
   </section>
 
   <!-- Partners -->
-  <section class="partners text-center py-16">
+  <section class="partners text-center py-12 sm:py-16 md:py-16">
     <div class="container">
-      <h3 class="text-2xl font-bold">
+      <h3 class="text-xl sm:text-xl md:text-2xl font-bold">
         Bank guarantees delivered in partnership with
       </h3>
-      <div class="flex justify-center items-center mt-8 space-x-12">
+      <div
+        class="flex flex-col sm:flex-row justify-center items-center mt-6 sm:mt-8 space-y-4 sm:space-y-0 sm:space-x-8 md:space-x-12"
+      >
         <img
-          src="https://www.amp.com.au/etc/clientlibs/amp/clientlib-base/images/amp-logo.svg"
+          src="/public/amp-logo.png"
           alt="AMP Bank"
-          class="h-16"
+          class="h-12 sm:h-14 md:h-16"
         />
         <img
-          src="https://placehold.co/150x50?text=ARCGX"
+          src="/public/arcgx-logo.png"
           alt="ARCGX"
-          class="h-16"
+          class="h-12 sm:h-14 md:h-16"
         />
         <img
-          src="https://perpetual.com.au/-/media/images/perpetual/logo/perpetual-logo.ashx"
+          src="/public/perpetual-logo.png"
           alt="Perpetual"
-          class="h-16"
+          class="h-12 sm:h-14 md:h-16"
         />
       </div>
     </div>
   </section>
 
   <!-- It's Free -->
-  <section class="free-section text-center py-24 bg-bg-white">
+  <section class="free-section text-center py-12 sm:py-16 md:py-24 bg-bg-white">
     <div class="container">
       <div
-        class="bg-teal text-bg-white p-12 rounded-3xl shadow-card max-w-4xl mx-auto"
+        class="bg-teal text-bg-white p-8 sm:p-10 md:p-12 rounded-3xl shadow-card max-w-4xl mx-auto"
       >
-        <h2 class="text-6xl font-bold">It's Free</h2>
+        <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold">It's Free</h2>
         <div
-          class="flex flex-col md:flex-row justify-around mt-8 text-2xl font-medium space-y-4 md:space-y-0"
+          class="flex flex-col sm:flex-row justify-around mt-6 sm:mt-8 text-xl sm:text-xl md:text-2xl font-medium space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-8"
         >
           <span>NO onboarding fees</span>
           <span>NO application fees</span>
@@ -161,38 +201,63 @@ import Layout from "../layouts/Layout.astro";
   </section>
 
   <!-- Eligibility Criteria -->
-  <section class="eligibility text-center py-24">
+  <section class="eligibility text-center py-12 sm:py-16 md:py-24">
     <div class="container">
-      <h3 class="text-3xl font-bold">Eligibility criteria</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-        <div class="bg-bg-light p-8 rounded-3xl shadow-card">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="#D4E157"
+      <h3 class="text-2xl sm:text-2xl md:text-3xl font-bold">
+        Eligibility criteria
+      </h3>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-7 md:gap-8 mt-8 sm:mt-10 md:mt-12"
+      >
+        <div class="bg-bg-light p-6 sm:p-7 md:p-8 rounded-3xl shadow-card">
+          <svg
+            class="w-6 sm:w-7 md:w-8 h-6 sm:h-7 md:h-8"
+            viewBox="0 0 24 24"
+            fill="#D4E157"
             ><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"></path></svg
           >
-          <h4 class="text-2xl font-bold mt-4">Registered business</h4>
-          <p class="text-text-gray mt-2 text-lg">
+          <h4
+            class="text-xl sm:text-xl md:text-2xl font-bold mt-3 sm:mt-3 md:mt-4"
+          >
+            Registered business
+          </h4>
+          <p class="text-text-gray mt-2 text-base sm:text-base md:text-lg">
             Both your business and the beneficiary must have an ABN
           </p>
         </div>
-        <div class="bg-bg-light p-8 rounded-3xl shadow-card">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="#D4E157"
+        <div class="bg-bg-light p-6 sm:p-7 md:p-8 rounded-3xl shadow-card">
+          <svg
+            class="w-6 sm:w-7 md:w-8 h-6 sm:h-7 md:h-8"
+            viewBox="0 0 24 24"
+            fill="#D4E157"
             ><path
               d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
             ></path></svg
           >
-          <h4 class="text-2xl font-bold mt-4">Entity type</h4>
-          <p class="text-text-gray mt-2 text-lg">
+          <h4
+            class="text-xl sm:text-xl md:text-2xl font-bold mt-3 sm:mt-3 md:mt-4"
+          >
+            Entity type
+          </h4>
+          <p class="text-text-gray mt-2 text-base sm:text-base md:text-lg">
             A public or private business, or a government entity
           </p>
         </div>
-        <div class="bg-bg-light p-8 rounded-3xl shadow-card">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="#D4E157"
+        <div class="bg-bg-light p-6 sm:p-7 md:p-8 rounded-3xl shadow-card">
+          <svg
+            class="w-6 sm:w-7 md:w-8 h-6 sm:h-7 md:h-8"
+            viewBox="0 0 24 24"
+            fill="#D4E157"
             ><path
               d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
             ></path></svg
           >
-          <h4 class="text-2xl font-bold mt-4">The guarantee must be</h4>
-          <p class="text-text-gray mt-2 text-lg">
+          <h4
+            class="text-xl sm:text-xl md:text-2xl font-bold mt-3 sm:mt-3 md:mt-4"
+          >
+            The guarantee must be
+          </h4>
+          <p class="text-text-gray mt-2 text-base sm:text-base md:text-lg">
             Used for business purposes and issued in Australian dollars ($AUD)
           </p>
         </div>
@@ -201,115 +266,340 @@ import Layout from "../layouts/Layout.astro";
   </section>
 
   <!-- Streamline Section -->
-  <section class="streamline text-center py-24 bg-bg-light">
+  <section class="streamline text-center py-12 sm:py-16 md:py-24 bg-bg-light">
     <div class="container">
-      <h2 class="text-5xl font-bold">
+      <h2 class="text-4xl sm:text-4xl md:text-5xl font-bold">
         Streamline your bank guarantees with MyGuarantee
       </h2>
-      <p class="text-text-gray text-xl mt-6 max-w-3xl mx-auto">
+      <p
+        class="text-text-gray text-base sm:text-lg md:text-xl mt-4 sm:mt-5 md:mt-6 max-w-3xl mx-auto"
+      >
         MyGuarantee offers bank guarantees via a secure digital platform to 3rd
         party beneficiaries.
       </p>
-      <p class="text-text-gray text-xl mt-4 max-w-3xl mx-auto">
+      <p
+        class="text-text-gray text-base sm:text-lg md:text-xl mt-2 sm:mt-3 md:mt-4 max-w-3xl mx-auto"
+      >
         A low-emission, sustainable choice.
       </p>
     </div>
   </section>
 
   <!-- Table Section -->
-  <section class="table-section py-24 flex justify-center">
+  <section class="table-section py-12 sm:py-16 md:py-24 flex justify-center">
     <div class="container">
-      <div class="bg-teal text-bg-white p-8 rounded-3xl shadow-card max-w-lg mx-auto overflow-hidden">
-        <h3 class="text-2xl font-bold mb-6 text-center">MyGuarantee</h3>
+      <div
+        class="bg-teal text-bg-white p-6 sm:p-7 md:p-8 rounded-3xl shadow-card max-w-lg mx-auto overflow-hidden"
+      >
+        <h3
+          class="text-xl sm:text-xl md:text-2xl font-bold mb-4 sm:mb-5 md:mb-6 text-center"
+        >
+          MyGuarantee
+        </h3>
         <table class="w-full table-auto border-collapse">
           <tbody>
-            <tr class="hover:bg-teal/90 cursor-pointer transition-colors duration-200" data-toggle="completely-digital">
-              <td class="py-3 px-4 text-lg">Completely digital</td>
-              <td class="py-3 px-4 text-right text-lime-green font-bold">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <tr
+              class="hover:bg-teal/90 cursor-pointer transition-colors duration-200"
+              data-toggle="completely-digital"
+            >
+              <td
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-base sm:text-base md:text-lg"
+                >Completely digital</td
+              >
+              <td
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-right text-lime-green font-bold"
+              >
+                <svg
+                  class="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg
+                >
               </td>
             </tr>
-            <tr id="completely-digital" class="hidden">
-              <td colspan="2" class="py-3 px-4 text-sm bg-teal/80">This feature ensures all processes are handled online without paper, reducing time and environmental impact.</td>
+            <tr
+              id="completely-digital"
+              class="hidden transition-all duration-300 ease-in-out"
+            >
+              <td
+                colspan="2"
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-xs sm:text-sm bg-teal/80"
+                >This feature ensures all processes are handled online without
+                paper, reducing time and environmental impact.</td
+              >
             </tr>
-            <tr class="hover:bg-teal/90 cursor-pointer transition-colors duration-200" data-toggle="processing-time">
-              <td class="py-3 px-4 text-lg">Processing time</td>
-              <td class="py-3 px-4 text-right">1 day</td>
+            <tr
+              class="hover:bg-teal/90 cursor-pointer transition-colors duration-200"
+              data-toggle="processing-time"
+            >
+              <td
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-base sm:text-base md:text-lg"
+                >Processing time</td
+              >
+              <td
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-right text-base sm:text-base md:text-lg"
+                >1 day</td
+              >
             </tr>
-            <tr id="processing-time" class="hidden">
-              <td colspan="2" class="py-3 px-4 text-sm bg-teal/80">Guarantees are issued the same day, streamlining approvals and issuance for fast business needs.</td>
+            <tr
+              id="processing-time"
+              class="hidden transition-all duration-300 ease-in-out"
+            >
+              <td
+                colspan="2"
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-xs sm:text-sm bg-teal/80"
+                >Guarantees are issued the same day, streamlining approvals and
+                issuance for fast business needs.</td
+              >
             </tr>
-            <tr class="hover:bg-teal/90 cursor-pointer transition-colors duration-200" data-toggle="secure-against-fraud">
-              <td class="py-3 px-4 text-lg">Secure against fraud</td>
-              <td class="py-3 px-4 text-right text-lime-green font-bold">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <tr
+              class="hover:bg-teal/90 cursor-pointer transition-colors duration-200"
+              data-toggle="secure-against-fraud"
+            >
+              <td
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-base sm:text-base md:text-lg"
+                >Secure against fraud</td
+              >
+              <td
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-right text-lime-green font-bold"
+              >
+                <svg
+                  class="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg
+                >
               </td>
             </tr>
-            <tr id="secure-against-fraud" class="hidden">
-              <td colspan="2" class="py-3 px-4 text-sm bg-teal/80">Advanced encryption and verification protect against unauthorized access and fraudulent activities.</td>
+            <tr
+              id="secure-against-fraud"
+              class="hidden transition-all duration-300 ease-in-out"
+            >
+              <td
+                colspan="2"
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-xs sm:text-sm bg-teal/80"
+                >Advanced encryption and verification protect against
+                unauthorized access and fraudulent activities.</td
+              >
             </tr>
-            <tr class="hover:bg-teal/90 cursor-pointer transition-colors duration-200" data-toggle="tracking">
-              <td class="py-3 px-4 text-lg">Tracking</td>
-              <td class="py-3 px-4 text-right text-lime-green font-bold">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <tr
+              class="hover:bg-teal/90 cursor-pointer transition-colors duration-200"
+              data-toggle="tracking"
+            >
+              <td
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-base sm:text-base md:text-lg"
+                >Tracking</td
+              >
+              <td
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-right text-lime-green font-bold"
+              >
+                <svg
+                  class="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg
+                >
               </td>
             </tr>
-            <tr id="tracking" class="hidden">
-              <td colspan="2" class="py-3 px-4 text-sm bg-teal/80">Real-time tracking of guarantee status from application to issuance and beyond.</td>
+            <tr
+              id="tracking"
+              class="hidden transition-all duration-300 ease-in-out"
+            >
+              <td
+                colspan="2"
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-xs sm:text-sm bg-teal/80"
+                >Real-time tracking of guarantee status from application to
+                issuance and beyond.</td
+              >
             </tr>
-            <tr class="hover:bg-teal/90 cursor-pointer transition-colors duration-200" data-toggle="reporting">
-              <td class="py-3 px-4 text-lg">Reporting</td>
-              <td class="py-3 px-4 text-right text-lime-green font-bold">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <tr
+              class="hover:bg-teal/90 cursor-pointer transition-colors duration-200"
+              data-toggle="reporting"
+            >
+              <td
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-base sm:text-base md:text-lg"
+                >Reporting</td
+              >
+              <td
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-right text-lime-green font-bold"
+              >
+                <svg
+                  class="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg
+                >
               </td>
             </tr>
-            <tr id="reporting" class="hidden">
-              <td colspan="2" class="py-3 px-4 text-sm bg-teal/80">Customizable reports on guarantees, including usage and performance metrics.</td>
+            <tr
+              id="reporting"
+              class="hidden transition-all duration-300 ease-in-out"
+            >
+              <td
+                colspan="2"
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-xs sm:text-sm bg-teal/80"
+                >Customizable reports on guarantees, including usage and
+                performance metrics.</td
+              >
             </tr>
-            <tr class="hover:bg-teal/90 cursor-pointer transition-colors duration-200" data-toggle="real-time-updates">
-              <td class="py-3 px-4 text-lg">Real time updates</td>
-              <td class="py-3 px-4 text-right text-lime-green font-bold">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <tr
+              class="hover:bg-teal/90 cursor-pointer transition-colors duration-200"
+              data-toggle="real-time-updates"
+            >
+              <td
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-base sm:text-base md:text-lg"
+                >Real time updates</td
+              >
+              <td
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-right text-lime-green font-bold"
+              >
+                <svg
+                  class="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg
+                >
               </td>
             </tr>
-            <tr id="real-time-updates" class="hidden">
-              <td colspan="2" class="py-3 px-4 text-sm bg-teal/80">Instant notifications and updates on status changes via email or dashboard.</td>
+            <tr
+              id="real-time-updates"
+              class="hidden transition-all duration-300 ease-in-out"
+            >
+              <td
+                colspan="2"
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-xs sm:text-sm bg-teal/80"
+                >Instant notifications and updates on status changes via email
+                or dashboard.</td
+              >
             </tr>
-            <tr class="hover:bg-teal/90 cursor-pointer transition-colors duration-200" data-toggle="standardisation">
-              <td class="py-3 px-4 text-lg">Standardisation</td>
-              <td class="py-3 px-4 text-right text-lime-green font-bold">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <tr
+              class="hover:bg-teal/90 cursor-pointer transition-colors duration-200"
+              data-toggle="standardisation"
+            >
+              <td
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-base sm:text-base md:text-lg"
+                >Standardisation</td
+              >
+              <td
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-right text-lime-green font-bold"
+              >
+                <svg
+                  class="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg
+                >
               </td>
             </tr>
-            <tr id="standardisation" class="hidden">
-              <td colspan="2" class="py-3 px-4 text-sm bg-teal/80">Standard terms and templates for consistent and compliant guarantees.</td>
+            <tr
+              id="standardisation"
+              class="hidden transition-all duration-300 ease-in-out"
+            >
+              <td
+                colspan="2"
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-xs sm:text-sm bg-teal/80"
+                >Standard terms and templates for consistent and compliant
+                guarantees.</td
+              >
             </tr>
-            <tr class="hover:bg-teal/90 cursor-pointer transition-colors duration-200" data-toggle="fully-transparent">
-              <td class="py-3 px-4 text-lg">Fully transparent</td>
-              <td class="py-3 px-4 text-right text-lime-green font-bold">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <tr
+              class="hover:bg-teal/90 cursor-pointer transition-colors duration-200"
+              data-toggle="fully-transparent"
+            >
+              <td
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-base sm:text-base md:text-lg"
+                >Fully transparent</td
+              >
+              <td
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-right text-lime-green font-bold"
+              >
+                <svg
+                  class="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg
+                >
               </td>
             </tr>
-            <tr id="fully-transparent" class="hidden">
-              <td colspan="2" class="py-3 px-4 text-sm bg-teal/80">Clear visibility into all steps of the guarantee process for trust and compliance.</td>
+            <tr
+              id="fully-transparent"
+              class="hidden transition-all duration-300 ease-in-out"
+            >
+              <td
+                colspan="2"
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-xs sm:text-sm bg-teal/80"
+                >Clear visibility into all steps of the guarantee process for
+                trust and compliance.</td
+              >
             </tr>
-            <tr class="hover:bg-teal/90 cursor-pointer transition-colors duration-200" data-toggle="documents-dashboard">
-              <td class="py-3 px-4 text-lg">Documents dashboard</td>
-              <td class="py-3 px-4 text-right text-lime-green font-bold">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <tr
+              class="hover:bg-teal/90 cursor-pointer transition-colors duration-200"
+              data-toggle="documents-dashboard"
+            >
+              <td
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-base sm:text-base md:text-lg"
+                >Documents dashboard</td
+              >
+              <td
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-right text-lime-green font-bold"
+              >
+                <svg
+                  class="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg
+                >
               </td>
             </tr>
-            <tr id="documents-dashboard" class="hidden">
-              <td colspan="2" class="py-3 px-4 text-sm bg-teal/80">Centralized dashboard for viewing, managing, and downloading all documents.</td>
+            <tr
+              id="documents-dashboard"
+              class="hidden transition-all duration-300 ease-in-out"
+            >
+              <td
+                colspan="2"
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-xs sm:text-sm bg-teal/80"
+                >Centralized dashboard for viewing, managing, and downloading
+                all documents.</td
+              >
             </tr>
-            <tr class="hover:bg-teal/90 cursor-pointer transition-colors duration-200" data-toggle="visible-audit-trail">
-              <td class="py-3 px-4 text-lg">Visible audit trail</td>
-              <td class="py-3 px-4 text-right text-lime-green font-bold">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <tr
+              class="hover:bg-teal/90 cursor-pointer transition-colors duration-200"
+              data-toggle="visible-audit-trail"
+            >
+              <td
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-base sm:text-base md:text-lg"
+                >Visible audit trail</td
+              >
+              <td
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-right text-lime-green font-bold"
+              >
+                <svg
+                  class="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg
+                >
               </td>
             </tr>
-            <tr id="visible-audit-trail" class="hidden">
-              <td colspan="2" class="py-3 px-4 text-sm bg-teal/80">Detailed log of all actions and changes for accountability and compliance.</td>
+            <tr
+              id="visible-audit-trail"
+              class="hidden transition-all duration-300 ease-in-out"
+            >
+              <td
+                colspan="2"
+                class="py-2 sm:py-3 px-2 sm:px-3 md:px-4 text-xs sm:text-sm bg-teal/80"
+                >Detailed log of all actions and changes for accountability and
+                compliance.</td
+              >
             </tr>
           </tbody>
         </table>
@@ -318,74 +608,119 @@ import Layout from "../layouts/Layout.astro";
   </section>
 
   <script>
-    document.querySelectorAll('[data-toggle]').forEach(row => {
-      const targetId = row.getAttribute('data-toggle') || '';
+    document.querySelectorAll("[data-toggle]").forEach((row) => {
+      const targetId = row.getAttribute("data-toggle") || "";
       const descriptionRow = document.getElementById(targetId);
 
       if (descriptionRow) {
-        row.addEventListener('mouseenter', () => {
-          descriptionRow.classList.remove('hidden');
-          row.classList.add('font-bold');
+        row.addEventListener("mouseenter", () => {
+          descriptionRow.classList.remove("hidden");
+          row.classList.add("font-bold");
         });
 
-        row.addEventListener('mouseleave', () => {
-          descriptionRow.classList.add('hidden');
-          row.classList.remove('font-bold');
+        row.addEventListener("mouseleave", () => {
+          descriptionRow.classList.add("hidden");
+          row.classList.remove("font-bold");
         });
+
+        row.addEventListener(
+          "touchstart",
+          (e) => {
+            e.preventDefault();
+            if (descriptionRow.classList.contains("hidden")) {
+              descriptionRow.classList.remove("hidden");
+              row.classList.add("font-bold");
+            } else {
+              descriptionRow.classList.add("hidden");
+              row.classList.remove("font-bold");
+            }
+          },
+          { passive: false }
+        );
       }
     });
   </script>
 
   <!-- FAQ Section -->
-  <section class="faq py-24 bg-bg-light text-center">
+  <section class="faq py-12 sm:py-16 md:py-24 bg-bg-light text-center">
     <div class="container">
-      <h2 class="text-4xl font-bold">FAQ</h2>
-      <p class="text-text-gray text-xl mt-4 max-w-3xl mx-auto">
+      <h2 class="text-3xl sm:text-3xl md:text-4xl font-bold">FAQ</h2>
+      <p
+        class="text-text-gray text-base sm:text-lg md:text-xl mt-3 sm:mt-3 md:mt-4 max-w-3xl mx-auto"
+      >
         Find answers to commonly asked questions about MyGuarantee
       </p>
-      <div class="mt-12 max-w-4xl mx-auto space-y-4">
-        <details class="bg-bg-white p-6 rounded-3xl shadow-card text-left">
-          <summary class="font-bold text-lg cursor-pointer"
+      <div
+        class="mt-8 sm:mt-10 md:mt-12 max-w-4xl mx-auto space-y-4 sm:space-y-5 md:space-y-6"
+      >
+        <details
+          class="bg-bg-white p-4 sm:p-5 md:p-6 rounded-3xl shadow-card text-left"
+        >
+          <summary class="font-bold text-base sm:text-lg cursor-pointer"
             >What is MyGuarantee, and how does a digital Bank Guarantee work?</summary
           >
-          <p class="mt-4 text-text-gray">
+          <p
+            class="mt-3 sm:mt-4 text-text-gray text-base sm:text-base md:text-lg"
+          >
             [Placeholder answer - replace with actual content from site.]
           </p>
         </details>
-        <details class="bg-bg-white p-6 rounded-3xl shadow-card text-left">
-          <summary class="font-bold text-lg cursor-pointer"
+        <details
+          class="bg-bg-white p-4 sm:p-5 md:p-6 rounded-3xl shadow-card text-left"
+        >
+          <summary class="font-bold text-base sm:text-lg cursor-pointer"
             >What are the benefits of MyGuarantee?</summary
           >
-          <p class="mt-4 text-text-gray">[Placeholder answer.]</p>
+          <p
+            class="mt-3 sm:mt-4 text-text-gray text-base sm:text-base md:text-lg"
+          >
+            [Placeholder answer.]
+          </p>
         </details>
-        <details class="bg-bg-white p-6 rounded-3xl shadow-card text-left">
-          <summary class="font-bold text-lg cursor-pointer"
+        <details
+          class="bg-bg-white p-4 sm:p-5 md:p-6 rounded-3xl shadow-card text-left"
+        >
+          <summary class="font-bold text-base sm:text-lg cursor-pointer"
             >What is an Issuer, Applicant and a Beneficiary?</summary
           >
-          <p class="mt-4 text-text-gray">[Placeholder answer.]</p>
+          <p
+            class="mt-3 sm:mt-4 text-text-gray text-base sm:text-base md:text-lg"
+          >
+            [Placeholder answer.]
+          </p>
         </details>
-        <details class="bg-bg-white p-6 rounded-3xl shadow-card text-left">
-          <summary class="font-bold text-lg cursor-pointer"
+        <details
+          class="bg-bg-white p-4 sm:p-5 md:p-6 rounded-3xl shadow-card text-left"
+        >
+          <summary class="font-bold text-base sm:text-lg cursor-pointer"
             >Who can use MyGuarantee?</summary
           >
-          <p class="mt-4 text-text-gray">[Placeholder answer.]</p>
+          <p
+            class="mt-3 sm:mt-4 text-text-gray text-base sm:text-base md:text-lg"
+          >
+            [Placeholder answer.]
+          </p>
         </details>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section class="contact py-24 text-center relative overflow-hidden">
+  <section
+    class="contact py-12 sm:py-16 md:py-24 text-center relative overflow-hidden"
+  >
     <div class="container relative z-10">
-      <h2 class="text-6xl font-bold">Bank guarantees from MyGuarantee</h2>
-      <a href="#" class="button inline-block mt-8">Contact us</a>
+      <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold">
+        Bank guarantees from MyGuarantee
+      </h2>
+      <a href="#" class="button inline-block mt-6 sm:mt-7 md:mt-8">Contact us</a
+      >
     </div>
     <div
-      class="absolute top-1/2 left-10 bg-bg-white p-6 rounded-3xl shadow-card opacity-90"
+      class="absolute top-1/3 sm:top-1/2 left-5 sm:left-10 md:left-10 bg-bg-white p-4 sm:p-5 md:p-6 rounded-3xl shadow-card opacity-90"
     >
       <svg
-        width="48"
-        height="48"
+        class="w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12"
         viewBox="0 0 24 24"
         fill="none"
         stroke="#10B981"
@@ -396,11 +731,10 @@ import Layout from "../layouts/Layout.astro";
       >
     </div>
     <div
-      class="absolute top-1/2 right-10 bg-bg-white p-6 rounded-3xl shadow-card opacity-90"
+      class="absolute top-1/3 sm:top-1/2 right-5 sm:right-10 md:right-10 bg-bg-white p-4 sm:p-5 md:p-6 rounded-3xl shadow-card opacity-90"
     >
       <svg
-        width="48"
-        height="48"
+        class="w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12"
         viewBox="0 0 24 24"
         fill="none"
         stroke="#10B981"
