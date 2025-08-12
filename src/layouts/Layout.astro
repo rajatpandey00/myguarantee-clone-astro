@@ -1,28 +1,115 @@
 ---
 const { title } = Astro.props;
-import '../styles/global.css';  // Add this line here
+import "../styles/global.css";
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en" class="font-sans">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <link rel="stylesheet" href="/styles/global.css" />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    >
   </head>
-  <body>
-    <header class="flex justify-between items-center py-4 bg-bg-white shadow-md sticky top-0 z-10">
-      <div class="container flex justify-between items-center">
-        <div class="logo text-3xl font-bold text-primary-blue">MyGuarantee</div>
-        <nav class="space-x-4">
-          <a href="/about" class="button">About us</a>
-          <a href="/news" class="button">News</a>
-          <a href="#" class="button">Login</a>
-          <a href="#" class="button">Continue ID Verification</a>
-        </nav>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-bg-white sticky top-0 z-50 shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="flex h-16 items-center justify-between">
+          <!-- Logo -->
+          <a href="/" class="text-2xl sm:text-3xl font-bold text-primary-blue">
+            MyGuarantee
+          </a>
+
+          <!-- Desktop nav -->
+          <nav class="hidden md:flex items-center gap-4">
+            <a href="/about" class="button">About us</a>
+            <a href="/news" class="button">News</a>
+            <a href="#" class="button">Login</a>
+            <a href="#" class="button rounded-2xl px-4 py-2 bg-emerald-500 text-white shadow hover:shadow-md">
+              Continue ID Verification
+            </a>
+          </nav>
+
+          <!-- Mobile toggle -->
+          <button
+            id="menuToggle"
+            class="md:hidden inline-flex items-center justify-center rounded-xl p-2 border border-gray-200"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <!-- Hamburger -->
+            <svg class="h-6 w-6 icon-open" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"></path>
+            </svg>
+            <!-- Close -->
+            <svg class="h-6 w-6 icon-close hidden" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.3 5.71L12 12.01l-6.29-6.3-1.42 1.42L10.59 13.4l-6.3 6.3 1.42 1.41 6.29-6.29 6.3 6.29 1.41-1.41-6.29-6.3 6.29-6.29z"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile menu panel -->
+        <div
+          id="mobileMenu"
+          class="md:hidden hidden absolute left-0 right-0 top-full bg-bg-white border-t shadow-md"
+        >
+          <nav class="px-4 py-4 flex flex-col gap-2">
+            <a href="/about" class="button text-base px-3 py-2 rounded-xl hover:bg-gray-50">About us</a>
+            <a href="/news" class="button text-base px-3 py-2 rounded-xl hover:bg-gray-50">News</a>
+            <a href="#" class="button text-base px-3 py-2 rounded-xl hover:bg-gray-50">Login</a>
+            <a
+              href="#"
+              class="button text-base px-3 py-2 rounded-2xl bg-emerald-500 text-white text-center shadow hover:shadow-md"
+            >
+              Continue ID Verification
+            </a>
+          </nav>
+        </div>
       </div>
     </header>
+
     <slot />
+
+    <!-- Tiny toggle script -->
+    <script is:inline>
+      const header = document.currentScript.closest('header');
+      const btn = header.querySelector('#menuToggle');
+      const menu = header.querySelector('#mobileMenu');
+      const openIcon = btn.querySelector('.icon-open');
+      const closeIcon = btn.querySelector('.icon-close');
+
+      function setOpen(isOpen) {
+        btn.setAttribute('aria-expanded', String(isOpen));
+        menu.classList.toggle('hidden', !isOpen);
+        openIcon.classList.toggle('hidden', isOpen);
+        closeIcon.classList.toggle('hidden', !isOpen);
+      }
+
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        setOpen(!isOpen);
+      });
+
+      // Close on Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setOpen(false);
+      });
+
+      // Close when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!header.contains(e.target)) setOpen(false);
+      });
+
+      // Handle Astro client-side route changes
+      document.addEventListener('astro:page-load', () => setOpen(false));
+    </script>
   </body>
 </html>

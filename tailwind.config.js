@@ -12,7 +12,7 @@ module.exports = {
 		  'bg-white': '#FFFFFF',
 		},
 		fontFamily: {
-		  'dm-sans': ['DM Sans', 'sans-serif'],
+			'dm-sans': ['"IBM Plex Sans"', '"IBM Plex Sans Placeholder"', 'sans-serif'],
 		},
 		backgroundImage: {
 		  'hero-gradient': 'linear-gradient(to bottom, #FFFFFF, #F0FDF4)',
